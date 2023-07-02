@@ -16,8 +16,8 @@ import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-
     private var cyListAdapter: CyListAdapter? = null
+    private var currentPage = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun requestAptCyList() {
         val cyListService = RetrofitClient.getInstance().create(CyApiService::class.java)
-        val listCall = cyListService.getAPTLttotPblancDetail()
+        val listCall = cyListService.getAPTLttotPblancDetail(page = currentPage++)
 
         listCall.enqueue(object : Callback<AptLttotPblancDetailDTO> {
             override fun onResponse(

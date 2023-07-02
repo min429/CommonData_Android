@@ -25,15 +25,17 @@ class CyListAdapter : RecyclerView.Adapter<CyListAdapter.CyListViewHolder>() {
     fun setAptListItem(cyList: MutableList<AptItem>) {
         this.cyListItemList = cyList
         notifyDataSetChanged()
+
     }
 
     override fun getItemCount(): Int {
         return cyListItemList.size
+
     }
 
     inner class CyListViewHolder(binding: ViewCyListItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(data: AptItem) {
-            binding.setVariable(BR.aptItem, data)
+            binding.aptItem = data
             binding.executePendingBindings()
         }
 

@@ -17,7 +17,7 @@ interface CyApiService {
 
     }
 
-    // 주택관리번호, 공고번호, 공고지역코드, 모집공고일 값을 이용하여 APT 분양정보의 상세정보를 제공
+    // page, perPage, serviceKey 값을 이용하여 APT 분양정보의 상세정보를 제공
     @GET("getAPTLttotPblancDetail")
     fun getAPTLttotPblancDetail(
         @Query("page")
