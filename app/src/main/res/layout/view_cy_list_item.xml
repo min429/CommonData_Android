@@ -12,74 +12,53 @@
         android:layout_width="match_parent"
         android:layout_height="130dp"
         android:clickable="true"
-        android:background="@android:color/transparent">
+        android:background="@drawable/text_box"
+        android:paddingStart="20dp">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cl_notice"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+        <!-- 주택관리번호 -->
+        <TextView
+            android:id="@+id/tv_house_manage_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            android:text="@{Integer.toString(aptItem.houseManageNo)}"
 
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginEnd="5dp"
-            android:paddingLeft="20dp"
+            app:layout_constraintVertical_chainStyle="packed"
 
-            android:background="@drawable/view_round_background"
-
-            android:clipToOutline="true"
-            android:elevation="5dp"
-
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/tv_house_nm"/>
 
-            <!-- 주택관리번호 -->
-            <TextView
-                android:id="@+id/tv_house_manage_no"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:textSize="15dp"
-                android:text="@{Integer.toString(aptItem.houseManageNo)}"
+        <!-- 주택명 -->
+        <TextView
+            android:id="@+id/tv_house_nm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:maxLines="1"
 
-                app:layout_constraintVertical_chainStyle="packed"
+            android:text="@{aptItem.houseNm}"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/tv_house_addr"
+            app:layout_constraintLeft_toLeftOf="@id/tv_house_manage_no"
+            app:layout_constraintTop_toBottomOf="@id/tv_house_manage_no" />
 
-                app:layout_constraintHorizontal_bias="0"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintBottom_toTopOf="@id/tv_house_nm"/>
-
-            <!-- 주택명 -->
-            <TextView
-                android:id="@+id/tv_house_nm"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:textSize="20dp"
-                android:maxLines="1"
-
-                android:text="@{aptItem.houseNm}"
-                app:layout_constraintHorizontal_bias="0"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintBottom_toTopOf="@id/tv_house_addr"
-                app:layout_constraintLeft_toLeftOf="@id/tv_house_manage_no"
-                app:layout_constraintTop_toBottomOf="@id/tv_house_manage_no" />
-
-            <!-- 주택 공급위치 -->
-            <TextView
-                android:id="@+id/tv_house_addr"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:textSize="15dp"
-                android:text="@{aptItem.houseAddr}"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="@id/tv_house_nm"
-                app:layout_constraintTop_toBottomOf="@id/tv_house_nm" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- 주택 공급위치 -->
+        <TextView
+            android:id="@+id/tv_house_addr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            android:text="@{aptItem.houseAddr}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/tv_house_nm"
+            app:layout_constraintTop_toBottomOf="@id/tv_house_nm" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
